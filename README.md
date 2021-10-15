@@ -1,4 +1,4 @@
-# MyApp
+# Currency switch with realTime
 
 <img src="https://i.imgur.com/yRPdQgu.png">
 
