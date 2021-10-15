@@ -1,0 +1,28 @@
+<div id="app">
+    <div class="container mt-3">
+        <h1 class="text-center">Hello, man!</h1>
+        <div *ngIf="loading; else load" class="d-flex flex-wrap justify-content-center">
+            <div class="card mt-4 col-md-2 m-1" *ngFor="let wal of wallets">
+                <div class="card-body">
+                  <h5 class="card-title">{{ wal.name }}</h5>
+                  <p class="card-text" *ngIf="wal.status === 1; else standart" [ngClass]="(wal.status === 1) ? 'green' : ''">{{ wal.value }} $</p>
+                  <ng-template #standart>
+                    <p class="card-text" [ngClass]="(wal.status === 2) ? 'red' : ''">{{ wal.value }} $</p>
+                  </ng-template>
+                  <!-- <button type="button" class="btn btn-primary">Button</button> -->
+                </div>
+              </div>
+        </div>
+        <ng-template #load>
+            <h3 class="text-center">Loading...</h3>
+        </ng-template>
+    </div>
+</div>
+<style>
+    .green{
+        color: green
+    }
+    .red{
+        color: red
+    }
+</style>
